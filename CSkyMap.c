@@ -22,11 +22,11 @@ int main()
     my_position.lat = 34.05;
     my_position.lng = -118.24358;
 
-    SetSkyMapObserver(&_skymap, &my_position);
-    SetSkyMapDateTime(&_skymap, &time_and_date_of_observation);
-    SetSkyMapCelestialObj(&_skymap, &star_coordinates);
+    skymap_set_observer(&_skymap, &my_position);
+    skymap_set_datetime(&_skymap, &time_and_date_of_observation);
+    skymap_set_celestial_obj(&_skymap, &star_coordinates);
 
-    struct SearchResult search_result = SkyMapCalculate(&_skymap);
+    struct SearchResult search_result = skymap_calculate(&_skymap);
     printf("alt %f, az %f", search_result.alt, search_result.az);
     return 0;
 }

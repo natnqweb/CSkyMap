@@ -123,7 +123,7 @@ struct SearchResult calculate_az_alt(double ha, double dec, double lat) {
     return result;
 }
 
-struct SearchResult SkyMapCalculate(struct SkyMap* sm) {
+struct SearchResult skymap_calculate(struct SkyMap* sm) {
     double j2000 = calculate_j2000(&(sm->date_time));
     double lst = calculate_local_sidereal_time(
         j2000,
@@ -135,15 +135,15 @@ struct SearchResult SkyMapCalculate(struct SkyMap* sm) {
     return calculate_az_alt(ha, sm->star_coordinates.dec, sm->observer_position.lat);
 }
 
-void SetSkyMapObserver(struct SkyMap* sm, struct ObserverPosition* observer_position)
+void skymap_set_observer(struct SkyMap* sm, struct ObserverPosition* observer_position)
 {
     (*sm).observer_position = *observer_position;
 }
-void SetSkyMapDateTime(struct SkyMap* sm, struct DateTime* dt)
+void skymap_set_datetime(struct SkyMap* sm, struct DateTime* dt)
 {
     (*sm).date_time = *dt;
 }
-void SetSkyMapCelestialObj(struct SkyMap* sm, struct StarCoordinates* co)
+void skymap_set_celestial_obj(struct SkyMap* sm, struct StarCoordinates* co)
 {
     (*sm).star_coordinates = *co;
 }
