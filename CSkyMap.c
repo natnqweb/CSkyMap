@@ -6,7 +6,6 @@ int main()
     struct SkyMap _skymap;
 
     struct DateTime time_and_date_of_observation;
-
     time_and_date_of_observation.year = 2021.00;
     time_and_date_of_observation.month = 9.00;
     time_and_date_of_observation.day = 4.00;
